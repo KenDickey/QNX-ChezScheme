@@ -6,7 +6,7 @@ This is a work-in-progress to create a QNX Port to be placed in https://github.c
 In the mean time, if you can't wait to get ChezScheme up on QNX, the basic process is:
 
 ````
-git clone https://github.com/cisco/ChezScheme
+git clone --filter=blob:none https://github.com/cisco/ChezScheme
 ````
 Get free QNX license and SDP: https://www.qnx.com/products/evaluation/
 
