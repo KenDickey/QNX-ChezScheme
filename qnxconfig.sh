@@ -1,0 +1,1 @@
+./configure --cross --machine=tarm64le --os=tarm64le  CC_FOR_BUILD="$QNX_CC" CFLAGS_FOR_BUILD="$QNX_CFLAGS" --disable-x11 CC="$QNX_CC" CFLAGS="-arch arm64 $QNX_CFLAGS" LDFLAGS="$QNX_LDFLAGS" ZLIB="$HOME/qnx800/target/qnx/aarch64le/usr/lib/libz.so" LZ4="/home/kend/ChezScheme/tarm64le/lz4/lib/liblz4.so"
