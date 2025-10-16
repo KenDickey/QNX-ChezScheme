@@ -35,6 +35,5 @@ Where .bashrc has:
 ````
 QNX_BASE="$HOME/qnx800"
 QNX_CC=qcc -Vgcc_ntoaarch64le
-QNX_CFLAGS=-I/home/kend/qnx800/target/qnx/usr/include -L/home/kend/qnx800/target/qnx/aarch64le/lib -L/home/kend/qnx800/target/qnx/aarch64le/usr/lib
-Q
+QNX_CFLAGS="-I$HOME/qnx800/target/qnx/usr/include -L$HOME/qnx800/target/qnx/aarch64le/lib -L$HOME/qnx800/target/qnx/aarch64le/usr/lib"
 ````
