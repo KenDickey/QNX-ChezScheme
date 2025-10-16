@@ -16,6 +16,12 @@ Get free QNX license and SDP: https://www.qnx.com/products/evaluation/
 - build "zou" [native]
 - build "LX4" [cross]
 - make XM=tarm64le
+- copy built files to target
+  - scp -r tarm64le/bin/tarmle qnxuser@192.168.50.<where>:/home/qnxuser/bin
+  - scp -r tarm64le/boot/tarmle qnxuser@192.168.50.<where>:/home/qnxuser/lib
+  - scp -r examples qnxuser@192.168.50.<where>:/home/qnxuser/lib
+- on target [as root]
+  - @@@
 
 
 ````
