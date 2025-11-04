@@ -14,13 +14,13 @@
 
 CC=gcc
 
-CFLAGS=-m64 -msse2 -O2 -D_REENTRANT -pthread -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CFLAGS=-m64 -msse2 -O2 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
 #CFLAGS=-O -DMAX_WBITS=14 -DMAX_MEM_LEVEL=7
 #CFLAGS=-g -DZLIB_DEBUG
 #CFLAGS=-O3 -Wall -Wwrite-strings -Wpointer-arith -Wconversion \
 #           -Wstrict-prototypes -Wmissing-prototypes
 
-SFLAGS=-m64 -msse2 -O2 -D_REENTRANT -pthread -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SFLAGS=-m64 -msse2 -O2 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
 LDFLAGS=-rdynamic
 TEST_LIBS=-L. libz.a
 LDSHARED=gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
