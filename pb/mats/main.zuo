@@ -1,0 +1,3 @@
+#lang zuo
+(define config (config-file->hash (at-source ".." "Mf-config")))
+(build/command-line* (dynamic-require (build-path ((make-at-dir (at-source ".." "..")) (hash-ref config (quote srcdir))) "mats" "build.zuo") (quote targets-at)) at-source)

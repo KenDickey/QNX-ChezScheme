@@ -1,0 +1,5 @@
+#lang zuo
+;; main.zuo.  Generated from main.zuo.in by configure.
+;; `configure` modifies the following line:
+(require "./build.zuo")
+(build/command-line* targets-at at-source)

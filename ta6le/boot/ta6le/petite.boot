@@ -1,0 +1,1 @@
+../../../boot/ta6le/petite.boot

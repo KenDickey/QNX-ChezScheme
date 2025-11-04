@@ -1,0 +1,7 @@
+;; This template is turned into a machine-specific ".def" file
+;; by the `machine.def` script
+
+(define-constant machine-type (constant machine-type-ta6le))
+(features iconv expeditor pthreads)
+(include "a6.def")
+(include "default.def")

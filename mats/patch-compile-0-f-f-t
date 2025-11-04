@@ -1,0 +1,73 @@
+*** output-compile-0-f-f-f-experr/errors-compile-0-f-f-f	Tue Aug 12 19:49:32 2025
+--- output-compile-0-f-f-t-experr/errors-compile-0-f-f-t	Tue Aug 12 19:49:26 2025
+***************
+*** 4059,4065 ****
+  misc.mo:Expected error in mat compute-composition: "compute-composition: invalid generation -1".
+  misc.mo:Expected error in mat compute-composition: "compute-composition: invalid generation "static"".
+  misc.mo:Expected error in mat make-object-finder: "make-object-finder: 17 is not a procedure".
+! misc.mo:Expected error in mat make-object-finder: "make-object-finder: invalid generation 5".
+  misc.mo:Expected error in mat make-object-finder: "make-object-finder: invalid generation oldgen".
+  misc.mo:Expected error in mat make-object-finder: "make-object-finder: invalid generation -1".
+  misc.mo:Expected error in mat make-object-finder: "incorrect number of arguments 1 to #<procedure find-next>".
+--- 4059,4065 ----
+  misc.mo:Expected error in mat compute-composition: "compute-composition: invalid generation -1".
+  misc.mo:Expected error in mat compute-composition: "compute-composition: invalid generation "static"".
+  misc.mo:Expected error in mat make-object-finder: "make-object-finder: 17 is not a procedure".
+! misc.mo:Expected error in mat make-object-finder: "make-object-finder: invalid generation 7".
+  misc.mo:Expected error in mat make-object-finder: "make-object-finder: invalid generation oldgen".
+  misc.mo:Expected error in mat make-object-finder: "make-object-finder: invalid generation -1".
+  misc.mo:Expected error in mat make-object-finder: "incorrect number of arguments 1 to #<procedure find-next>".
+***************
+*** 8044,8054 ****
+  7.mo:Expected error in mat sstats: "set-sstats-gc-bytes!: twelve is not an exact integer".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation yuk".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation -1".
+! 7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation 5".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation <int>".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation #f".
+! 7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation 5".
+! 7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation 5".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid space gnu".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid space gnu".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid space gnu".
+--- 8044,8054 ----
+  7.mo:Expected error in mat sstats: "set-sstats-gc-bytes!: twelve is not an exact integer".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation yuk".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation -1".
+! 7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation 7".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation <int>".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation #f".
+! 7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation 7".
+! 7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid generation 7".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid space gnu".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid space gnu".
+  7.mo:Expected error in mat bytes-allocated: "bytes-allocated: invalid space gnu".
+***************
+*** 9585,9597 ****
+  fx.mo:Expected error in mat fx-/wraparound: "fx-: <-int> is not a fixnum".
+  fx.mo:Expected error in mat fx-/wraparound: "fx-: <-int> is not a fixnum".
+  fx.mo:Expected error in mat fx*: "fx*: (a . b) is not a fixnum".
+! fx.mo:Expected error in mat fx*: "fx*: fixnum overflow with arguments <int> and 2".
+  fx.mo:Expected error in mat fx*: "fx*: <int> is not a fixnum".
+  fx.mo:Expected error in mat fx*: "fx*: <-int> is not a fixnum".
+  fx.mo:Expected error in mat fx*: "fx*: #f is not a fixnum".
+  fx.mo:Expected error in mat fx*: "fx*: #f is not a fixnum".
+  fx.mo:Expected error in mat r6rs:fx*: "fx*: (a . b) is not a fixnum".
+! fx.mo:Expected error in mat r6rs:fx*: "fx*: fixnum overflow with arguments <int> and 2".
+  fx.mo:Expected error in mat r6rs:fx*: "fx*: <int> is not a fixnum".
+  fx.mo:Expected error in mat r6rs:fx*: "fx*: <-int> is not a fixnum".
+  fx.mo:Expected error in mat r6rs:fx*: "fx*: #f is not a fixnum".
+--- 9585,9597 ----
+  fx.mo:Expected error in mat fx-/wraparound: "fx-: <-int> is not a fixnum".
+  fx.mo:Expected error in mat fx-/wraparound: "fx-: <-int> is not a fixnum".
+  fx.mo:Expected error in mat fx*: "fx*: (a . b) is not a fixnum".
+! fx.mo:Expected error in mat fx*: "fx*: fixnum overflow computing (fx* <int> 2)".
+  fx.mo:Expected error in mat fx*: "fx*: <int> is not a fixnum".
+  fx.mo:Expected error in mat fx*: "fx*: <-int> is not a fixnum".
+  fx.mo:Expected error in mat fx*: "fx*: #f is not a fixnum".
+  fx.mo:Expected error in mat fx*: "fx*: #f is not a fixnum".
+  fx.mo:Expected error in mat r6rs:fx*: "fx*: (a . b) is not a fixnum".
+! fx.mo:Expected error in mat r6rs:fx*: "fx*: fixnum overflow computing (fx* <int> 2)".
+  fx.mo:Expected error in mat r6rs:fx*: "fx*: <int> is not a fixnum".
+  fx.mo:Expected error in mat r6rs:fx*: "fx*: <-int> is not a fixnum".
+  fx.mo:Expected error in mat r6rs:fx*: "fx*: #f is not a fixnum".

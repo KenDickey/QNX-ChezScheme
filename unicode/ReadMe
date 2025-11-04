@@ -1,0 +1,2 @@
+To download the latest Unicode files and rebuild unicode-char-cases.ss and
+unicode-charinfo.ss, run 'make'.
