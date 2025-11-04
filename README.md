@@ -37,3 +37,8 @@ QNX_BASE="$HOME/qnx800"
 QNX_CC=qcc -Vgcc_ntoaarch64le
 QNX_CFLAGS="-I$HOME/qnx800/target/qnx/usr/include -L$HOME/qnx800/target/qnx/aarch64le/lib -L$HOME/qnx800/target/qnx/aarch64le/usr/lib"
 ````
+
+Note: to find local inet address:
+````
+ifconfig |grep inet
+````
