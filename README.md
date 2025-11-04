@@ -50,7 +50,7 @@ rpi4qnx:~[==> ifconfig |grep inet
 	inet6 fe80::dea6:32ff:fe27:62b1%genet0 prefixlen 64 scopeid 0x5
 	inet6 fe80::dea6:32ff:fe27:62b4%bcm0 prefixlen 64 scopeid 0x6
 	inet 192.168.50.199 netmask 0xffffff00 broadcast 192.168.50.255
-rpi4qnx:~[==> bin  # if you have not yet done this..
+rpi4qnx:~[==> mkdir bin  # if you have not yet done this..
 rpi4qnx:~[==> mkdir lib/csv10.3.0-pre-release.5
 ````
 Shows the inet address to be `192.168.50.199` on the local network.
