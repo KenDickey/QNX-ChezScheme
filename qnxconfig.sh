@@ -1,1 +1,1 @@
-./configure --cross --machine=tarm64le --os=tarm64le  CC_FOR_BUILD="$QNX_CC" CFLAGS_FOR_BUILD="$QNX_CFLAGS" --disable-x11 CC="$QNX_CC" CFLAGS="-arch arm64 $QNX_CFLAGS" LDFLAGS="$QNX_LDFLAGS" ZLIB="$QNX_TARGET/usr/lib/libz.so" LZ4="$QNX_TARGET/usr/lib/liblz4.so"
+./configure --cross --machine=tarm64le --os=tarm64le  CC_FOR_BUILD="$QNX_CC" CFLAGS_FOR_BUILD="$QNX_CFLAGS" --disable-x11 CC="$QNX_CC" CFLAGS="$QNX_CFLAGS -DNO_USELOCALE" LDFLAGS="$QNX_LDFLAGS" LIBS="$QNX_LIBS" ZLIB="$QNX_TARGET/usr/lib/libz.so" LZ4="$QNX_TARGET/usr/lib/liblz4.so" --disable-auto-flags

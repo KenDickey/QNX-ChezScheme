@@ -125,7 +125,12 @@ typedef int tputsputcchar;
 #ifndef DISABLE_X11
 # define LIBX11 "libX11.so"
 #endif
-#define LSEEK lseek64
+#if defined( __QNX__)
+# define NO_USELOCALE
+# define LSEEK lseek
+#else
+# define LSEEK lseek64
+#endif
 #define OFF_T off64_t
 #define _LARGEFILE64_SOURCE
 #define SECATIME(sb) (sb).st_atim.tv_sec
@@ -248,7 +253,11 @@ struct timespec;
 #define GETCWD S_windows_getcwd
 #define GETPID _getpid
 #define HYPOT _hypot
-#define LSEEK _lseeki64
+#if defined( __QNX__)
+# define LSEEK _lseek
+#else
+# define LSEEK _lseeki64
+#endif
 #define LSTAT S_windows_stat64
 #define OFF_T __int64
 #define OPEN S_windows_open
@@ -369,7 +378,11 @@ typedef char *memcpy_t;
 typedef int tputsputcchar;
 #define LOCKF
 #define DIRMARKERP(c) ((c) == '/')
-#define LSEEK lseek64
+#if defined( __QNX__)
+# define LSEEK lseek
+#else
+# define LSEEK lseek64
+#endif
 #define OFF_T off64_t
 #define _LARGEFILE64_SOURCE
 #define SECATIME(sb) (sb).st_atime

@@ -29,9 +29,9 @@
 #include <pwd.h>
 #endif /* WIN32 */
 #include <fcntl.h>
-#include "zlib.h"
-#include "lz4.h"
-#include "lz4hc.h"
+#include <zlib.h>
+#include <lz4/lz4.h>
+#include <lz4/lz4hc.h>
 
 /* !!! UNLESS you enjoy spending endless days tracking down race conditions
    !!! involving the garbage collector, please note: DEACTIVATE and
