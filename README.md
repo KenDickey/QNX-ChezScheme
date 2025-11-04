@@ -19,8 +19,8 @@ Get free QNX license and SDP: https://www.qnx.com/products/evaluation/
 - as qnxuser on target
   - mkdir chezbin chezlib
 - copy built files to target
-  - scp -r tarm64le/bin/tarmle qnxuser@192.168.50.<where>:/home/qnxuser/chezbin
-  - scp -r tarm64le/boot/tarmle qnxuser@192.168.50.<where>:/home/qnxuser/chezlib
+  - scp -r tarm64le/bin/tarmle qnxuser@192.168.50.`where`:/home/qnxuser/chezbin
+  - scp -r tarm64le/boot/tarmle qnxuser@192.168.50.`where`:/home/qnxuser/chezlib
   - scp -r examples qnxuser@192.168.50.<where>:/home/qnxuser/chezlib
 - on target [as root]
   - mv chezlib /usr/local/csv10.3.0-pre-release.5  # use version-name
