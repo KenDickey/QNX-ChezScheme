@@ -55,7 +55,7 @@ rpi4qnx:~[==> mkdir lib/csv10.3.0-pre-release.5
 ````
 Shows the inet address to be `192.168.50.199` on the local network.
 
-So on your Linux build machine (assuming you have a `$HOME/bin` directory)
+So on your Linux build machine:
 ````
 scp $HOME/QNX-ChezScheme/tarm64le/bin/tarm64le/* qnxuser@192.168.50.199:/home/qnxuser/bin
 scp $HOME/QNX-ChezScheme/tarm64le/boot/tarm64le qnxuser@192.168.50.199:/home/qnxuser/lib//csv10.3.0-pre-release.5
@@ -65,11 +65,11 @@ Now your `scheme` executable should be able to find the required files.
 You can check this using the `--verbose` command option:
 ````
 rpi4qnx:~[==> scheme --verbose
-trying /data/home/kend/bin/scheme.boot...cannot open
-trying /data/home/kend/bin/../lib/csv10.3.0-pre-release.5/tarm64le/scheme.boot...opened
+trying /data/home/qnxuser/bin/scheme.boot...cannot open
+trying /data/home/qnxuser/bin/../lib/csv10.3.0-pre-release.5/tarm64le/scheme.boot...opened
 version and machine type check
-trying /data/home/kend/bin/petite.boot...cannot open
-trying /data/home/kend/bin/../lib/csv10.3.0-pre-release.5/tarm64le/petite.boot...opened
+trying /data/home/qnxuser/bin/petite.boot...cannot open
+trying /data/home/qnxuser/bin/../lib/csv10.3.0-pre-release.5/tarm64le/petite.boot...opened
 version and machine type check
 Chez Scheme Version 10.3.0-pre-release.5
 Copyright 1984-2025 Cisco Systems, Inc.
@@ -80,3 +80,6 @@ Copyright 1984-2025 Cisco Systems, Inc.
 ````
 
 Happy, happy! Joy, joy!
+
+
+Find usage details at https://github.com/cisco/ChezScheme/blob/main/README.md
