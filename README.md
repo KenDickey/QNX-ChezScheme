@@ -1,44 +1,82 @@
 # QNX-ChezScheme
-Instructions &amp; files to cross-compile Chez Scheme [https://github.com/cisco/ChezScheme] to QNX/RPi4
+Instructions &amp; files to cross-compile Chez Scheme [https://github.com/cisco/ChezScheme] from x86 Linux to QNX 8.0 + Raspberry Pi 4.
 
-This is a work-in-progress to create a QNX Port to be placed in https://github.com/qnx-ports/build-files
+Visual Studio Project with QNX plugin.  
 
-In the mean time, if you can't wait to get ChezScheme up on QNX, the basic process is:
+Get QNX free licence and directions at  qnx.com/getqnx
 
-````
-git clone --filter=blob:none https://github.com/cisco/ChezScheme
-````
-Get free QNX license and SDP: https://www.qnx.com/products/evaluation/
+Tested on Raspberry Pi 4 + QNX 8.0
 
-- invoke qnxconfig.sh [=> configure options]
-- source ~/qnx800/qnxsdp-env.sh
-- cd ChezScheme
-- build "zou" [native x86]
-- build "LX4" [cross aarch64/arm64le]
-- make XM=tarm64le
-- as qnxuser on target
-  - mkdir chezbin chezlib
-- copy built files to target
-  - scp -r tarm64le/bin/tarmle qnxuser@192.168.50.`where`:/home/qnxuser/chezbin
-  - scp -r tarm64le/boot/tarmle qnxuser@192.168.50.`where`:/home/qnxuser/chezlib
-  - scp -r examples qnxuser@192.168.50.<where>:/home/qnxuser/chezlib
-- on target [as root]
-  - mv chezlib /usr/local/csv10.3.0-pre-release.5  # use version-name
-  - mv chezbin/tarm64le/* /usr/bin     # scheme, petite
 
+This is a quick get-it-working port.  Caveat programmer. If it breaks, you get to keep the pieces.
+
+The good news is that ChezScheme cross bootstraps nicely.
+
+There are a few changes to use QNX 8.0 libraries & includes.
 ````
-vvv======vvv qnxconfig.sh
-./configure --cross --machine=tarm64le --os=tarm64le  CC_FOR_BUILD="$QNX_CC" CFLAGS_FOR_BUILD="$QNX_CFLAGS" --disable-x11 CC="$QNX_CC" CFLAGS="-arch arm64 $QNX_CFLAGS" LDFLAGS="$QNX_LDFLAGS" ZLIB="$HOME/qnx800/target/qnx/aarch64le/usr/lib/libz.so" LZ4="$HOME/ChezScheme/tarm64le/lz4/lib/liblz4.so"
-^^^======^^^
+# Get the files
+cd $HOME
+git clone https://github.com/KenDickey/QNX-ChezScheme
+# Build zuo x86 native
+cd QNX-ChezScheme/zuo
+./configure && make
+cp zuo ../bin
+cp -r lib ../bin
+cd ..
+# Set the environment
+source sourceMe.sh
+# Configure
+sh ./qnxcondif.sh
+# Cross compile for RPi4 arm64
+make XM=tarm64le
 ````
-Where .bashrc has:
+Assuming all went well, you have built `scheme` and `petite` in
+subdirectory "tarm64le/bin/tarm64le".
+
+You can check with the `file` command
 ````
-QNX_BASE="$HOME/qnx800"
-QNX_CC=qcc -Vgcc_ntoaarch64le
-QNX_CFLAGS="-I$HOME/qnx800/target/qnx/usr/include -L$HOME/qnx800/target/qnx/aarch64le/lib -L$HOME/qnx800/target/qnx/aarch64le/usr/lib"
+file tarm64le/bin/tarm64le/scheme
+```
+which should report a ARM aarch64 executable.
+
+You now need to move the required files & libs to the RasPi4 target running QNX.
+
+You can find the inet address via `ifconfig`.  E.g.
+````
+rpi4qnx:~[==> ifconfig |grep inet
+	inet 127.0.0.1 netmask 0xff000000
+	inet6 ::1 prefixlen 128
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x2
+	inet6 fe80::dea6:32ff:fe27:62b1%genet0 prefixlen 64 scopeid 0x5
+	inet6 fe80::dea6:32ff:fe27:62b4%bcm0 prefixlen 64 scopeid 0x6
+	inet 192.168.50.199 netmask 0xffffff00 broadcast 192.168.50.255
+rpi4qnx:~[==> bin  # if you have not yet done this..
+rpi4qnx:~[==> mkdir lib/csv10.3.0-pre-release.5
+````
+Shows the inet address to be `192.168.50.199` on the local network.
+
+So on your Linux build machine (assuming you have a `$HOME/bin` directory)
+````
+scp $HOME/QNX-ChezScheme/tarm64le/bin/tarm64le/* qnxuser@192.168.50.199:/home/qnxuser/bin
+scp $HOME/QNX-ChezScheme/tarm64le/boot/tarm64le qnxuser@192.168.50.199:/home/qnxuser/lib//csv10.3.0-pre-release.5
+````
+Now your `scheme` executable should be able to find the required files.
+
+You can check this using the `--verbose` command option:
+````
+rpi4qnx:~[==> scheme --verbose
+trying /data/home/kend/bin/scheme.boot...cannot open
+trying /data/home/kend/bin/../lib/csv10.3.0-pre-release.5/tarm64le/scheme.boot...opened
+version and machine type check
+trying /data/home/kend/bin/petite.boot...cannot open
+trying /data/home/kend/bin/../lib/csv10.3.0-pre-release.5/tarm64le/petite.boot...opened
+version and machine type check
+Chez Scheme Version 10.3.0-pre-release.5
+Copyright 1984-2025 Cisco Systems, Inc.
+
+> (+ 1/2 1/3 1/6)
+1
+> 
 ````
 
-Note: to find local inet address:
-````
-ifconfig |grep inet
-````
+Happy, happy! Joy, joy!
