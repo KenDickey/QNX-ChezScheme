@@ -36,7 +36,7 @@ subdirectory "tarm64le/bin/tarm64le".
 You can check with the `file` command
 ````
 file tarm64le/bin/tarm64le/scheme
-```
+````
 which should report a ARM aarch64 executable.
 
 You now need to move the required files & libs to the RasPi4 target running QNX.
