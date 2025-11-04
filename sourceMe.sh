@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script sets environment variables required to use this version of QNX Software Development Platform
 # from the command line. To use the script, you have to "source" it into your shell, i.e.:
-#   source qnxsdp-env.sh
+#    source sourceMe.sh
 # if source command is not available use "." (dot) command instead
 #
 test "$BASH_SOURCE" = "" && echo "This script can be sourced only from bash" && return
@@ -30,7 +30,7 @@ export QNX_CONFIGURATION=$QNX_CONFIGURATION_EXCLUSIVE
 
 export SWCENTER_INSTALL_PATH=$HOME/qnx/qnxsoftwarecenter
 export QSC_CLT_PATH=$SWCENTER_INSTALL_PATH/qnxsoftwarecenter_cltw
-export QNX_PROJECTS=/home/kend/qnx/qnxprojects
+export QNX_PROJECTS=$HOME/qnx/qnxprojects
 export QNX_CONFIGURATION_EXCLUSIVE=$HOME/.qnx
 export QNX_CONFIGURATION=$QNX_CONFIGURATION_EXCLUSIVE
 export QNX_CC="qcc -Vgcc_ntoaarch64le"
