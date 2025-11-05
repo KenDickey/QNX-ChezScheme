@@ -26,7 +26,7 @@ cd ..
 # Set the environment
 source sourceMe.sh
 # Configure
-sh ./qnxcondif.sh
+sh ./qnxconfig.sh
 # Cross compile for RPi4 arm64
 make XM=tarm64le
 ````
