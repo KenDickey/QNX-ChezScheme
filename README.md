@@ -1,9 +1,7 @@
 # QNX-ChezScheme
-Instructions &amp; files to cross-compile Chez Scheme [https://github.com/cisco/ChezScheme] from x86 Linux to QNX 8.0 + Raspberry Pi 4.
+Instructions &amp; files to cross-compile Chez Scheme [https://github.com/cisco/ChezScheme] from x86 Linux to QNX 8.0 + Raspberry Pi 4 
 
-Visual Studio Project with QNX plugin.  
-
-Get QNX free licence and directions at  qnx.com/getqnx
+Get QNX free licence and directions at  qnx.com/getqnx. [Visual Studio NOT required]
 
 Tested on Raspberry Pi 4 + QNX 8.0
 
